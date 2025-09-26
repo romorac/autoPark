@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 4.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="nombreVendedor" class="java.lang.String"/>
+	<parameter name="estadoCivilVendedor" class="java.lang.String"/>
+	<parameter name="nacionalidadVendedor" class="java.lang.String"/>
+	<parameter name="direccionVendedor" class="java.lang.String"/>
+	<parameter name="comunaVendedor" class="java.lang.String"/>
+	<parameter name="rutVendedor" class="java.lang.String"/>
+	<parameter name="nombreComprador" class="java.lang.String"/>
+	<parameter name="comunaComprador" class="java.lang.String"/>
+	<parameter name="direccionComprador" class="java.lang.String"/>
+	<parameter name="rutComprador" class="java.lang.String"/>
+	<parameter name="tipoVenta" class="java.lang.String"/>
+	<parameter name="tipoVehiculo" class="java.lang.String"/>
+	<parameter name="marcaVehiculo" class="java.lang.String"/>
+	<parameter name="modeloVehiculo" class="java.lang.String"/>
+	<parameter name="numeroMotorVehiculo" class="java.lang.String"/>
+	<parameter name="numeroChasisVehiculo" class="java.lang.String"/>
+	<parameter name="anioVehiculo" class="java.lang.String"/>
+	<parameter name="colorVehiculo" class="java.lang.String"/>
+	<parameter name="patenteVehiculo" class="java.lang.String"/>
+	<parameter name="montoVentaTexto" class="java.lang.String"/>
+	<parameter name="montoVenta" class="java.lang.String"/>
+	<parameter name="obsFormaPago" class="java.lang.String"/>
+	<parameter name="ciudadVenta" class="java.lang.String"/>
+	<parameter name="diaVenta" class="java.lang.String"/>
+	<parameter name="mesVenta" class="java.lang.String"/>
+	<parameter name="anioVenta" class="java.lang.String"/>
+	<parameter name="impuesto" class="java.lang.String"/>
+	<parameter name="obs" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="Id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<field name="Designation" class="java.lang.String">
+		<fieldDescription><![CDATA[designation]]></fieldDescription>
+	</field>
+	<field name="Department" class="java.lang.String">
+		<fieldDescription><![CDATA[department]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement x="313" y="10" width="230" height="59"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPRA VENTA AL CONTADO DE VEHICULOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="27" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="605" splitType="Immediate">
+			<textField isBlankWhenNull="true">
+				<reportElement x="10" y="10" width="534" height="460"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font size="11"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Entre.:  <i><font size=\"2\" >" + String.valueOf($P{nombreVendedor}) + "</font></i> domiciliado en "+ String.valueOf($P{comunaVendedor})+ " Calle "+ String.valueOf($P{direccionVendedor})+ " N° numCasaVendedor "+ " como Vendedor y Don "+ String.valueOf($P{nombreComprador})+ " Domiciliado en "+ String.valueOf($P{comunaComprador})+ " Calle "+ String.valueOf($P{direccionComprador})+ " N° numCasaComprador"+ " como Comprador, se ha convenido en el siguiente CONTRATO COMPRAVENTA."+ " \n<br><br><br> <font size=\"3\">PRIMERO</font>,- Don "+ String.valueOf($P{nombreVendedor})+ " quien vende y transfiere a don "+ String.valueOf($P{nombreComprador})+ " quien compra y adquiere para ------------------------------------------"+ " un "+ String.valueOf($P{tipoVehiculo})+ " Marca "+ String.valueOf($P{marcaVehiculo})+ " Modelo "+ String.valueOf($P{modeloVehiculo})+ " Motor N° "+ String.valueOf($P{numeroMotorVehiculo})+ " Chasis Serie "+ String.valueOf($P{numeroChasisVehiculo})+ " año "+ String.valueOf($P{anioVehiculo})+ " color "+ String.valueOf($P{colorVehiculo})+ " P.P.U "+ String.valueOf($P{patenteVehiculo})+ " del Registro Nacional de Vehículos Motorizados, usado en el estado que se encuentra, que es conocido del comprador, y sin derecho a ningún reclamo posterior. El comprador declara recibir en este acto a entera satisfacción la especie comprada."+ "\n<br><br><br> <font size=\"3\">SEGUNDO</font>.- El precio de venta es la suma de $ "+ String.valueOf($P{montoVenta})+ " que el comprador paga al vendedor en la siguiente forma: "+ String.valueOf($P{tipoVenta})+ " y que el vendedor declara recibir a entera satisfacción."+ "\n<br><br><br> <font size=\"3\">TERCERO</font>.- Declara el Vendedor que EL VEHICULO en referencia le pertenece exclusivamente, que no tiene deuda ni gravamen de ninguna especie. Ni esta afecto a prenda o embargo y que ha sido causal determinante de esta operación la presente declaración."+ " \n<br><br><br> <font size=\"3\">CUARTO</font>.- Se faculta al portador para requerir las inscripciones y anotaciones que sean necesarias."+ "\n<br><br><br> <font size=\"3\">OTORGADO</font> en "+ String.valueOf($P{ciudadVenta})+ " el "+ String.valueOf($P{diaVenta})+ " de "+ String.valueOf($P{mesVenta})+ " de 20"+ String.valueOf($P{anioVenta})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="62" y="484" width="156" height="46"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["------------------------------\n"+$P{rutVendedor}+"\n"+$P{nombreVendedor}+" \nVendedor"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="484" width="156" height="46"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["------------------------------\n"+$P{rutComprador}+"\n "+$P{nombreComprador}+ "\nComprador"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="77" y="564" width="400" height="15"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[AUTORIZO LAS FIRMAS.]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="18"/>
+	</pageFooter>
+</jasperReport>

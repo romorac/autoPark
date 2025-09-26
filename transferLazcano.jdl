@@ -1,0 +1,136 @@
+entity Comerciante {
+  nombre String required maxlength(100)
+  paterno String required maxlength(50)
+  materno String required maxlength(50)
+  rut String required maxlength(15) pattern(/^(((\d{2})|(\d{1}))\.\d{3}\.\d{3}-)([k|K|\d]{1})$/)
+  estado EstadoEnum required
+}
+entity Compra {
+  fechaRecepcion LocalDate required
+  ciudad String required maxlength(50)
+  monto Long required min(0)
+  montoTexto String required maxlength(100)
+  formaPago String maxlength(1000)
+  estado EstadoEnum
+  enProcesoVenta EstadoEnum
+  compraEmpresa Boolean
+}
+entity Comprador {
+  nombre String required maxlength(100)
+  paterno String required maxlength(50)
+  materno String required maxlength(50)
+  estadoCivil String required maxlength(20)
+  nacionalidad String required maxlength(20)
+  profesion String required maxlength(50)
+  rut String required maxlength(15) pattern(/^(((\d{2})|(\d{1}))\.\d{3}\.\d{3}-)([k|K|\d]{1})$/)
+  calle String required maxlength(150)
+  numero String required maxlength(10)
+  comuna String required maxlength(50)
+  telefono String required
+  celular String
+  estado EstadoEnum
+}
+entity Marcas {
+  nombre String required maxlength(50)
+}
+entity Modelos {
+  nombre String required maxlength(50)
+}
+entity Variables {
+  nombre String required maxlength(30)
+  valor String required maxlength(30)
+  estado EstadoEnum required
+}
+entity Vehiculo {
+  tipo TipoVehiculoEnum required
+  anio Long min(1950) max(2040) required
+  patente String required maxlength(10)
+  nroMotor String required maxlength(30)
+  nroChasis String required maxlength(30)
+  color String required maxlength(40)
+  nroInscripcion String required maxlength(20)
+  avaluoFiscal Integer min(0) max(99999999) required
+  fechaRecepcion LocalDate
+  fechaVenta LocalDate
+  comunaUltimoPermiso String 
+  anioUltimoPermiso Integer min(1980) max(2040)
+  codigoSii String maxlength(14)
+  valorTransferencia Integer
+  estado EstadoEnum
+}
+entity Vendedor {
+  nombre String required maxlength(100)
+  paterno String required maxlength(50)
+  materno String required maxlength(50)
+  rut String required maxlength(15) pattern(/^(((\d{2})|(\d{1}))\.\d{3}\.\d{3}-)([k|K|\d]{1})$/)
+  telefono String required
+  celular String
+  calle String required maxlength(150)
+  numero String required maxlength(10)
+  comuna String required maxlength(50)
+  estadoCivil String required maxlength(20)
+  nacionalidad String required maxlength(20)
+  profesion String required maxlength(50)
+  nombreRepresentante String maxlength(60)
+  rutRepresentante String pattern(/^(((\d{2})|(\d{1}))\.\d{3}\.\d{3}-)([k|K|\d]{1})$/)
+  tieneRepresentante Boolean required
+  estado EstadoEnum
+}
+entity Venta {
+  fechaVenta LocalDate required
+  ciudad String required maxlength(50)
+  monto Long required min(0)
+  montoTexto String required maxlength(100)
+  montoDeclaracion Long required min(0)
+  montoTextoDeclaracion String required maxlength(100)
+  montoContrato Long required min(0)
+  montoContratoTexto String required maxlength(100)
+  fechaDelContratoVenta LocalDate required
+  tipoVenta TipoVentaEnum required
+  nombreVentaPara String maxlength(100)
+  rutVentaPara String maxlength(15) pattern(/^(((\d{2})|(\d{1}))\.\d{3}\.\d{3}-)([k|K|\d]{1})$/)
+  formaPago String maxlength(1000)
+  formaPagoDeclaracion String maxlength(1000)
+  observacion String maxlength(400)
+  numeroCausa String maxlength(35)
+  numeroSolicitud String maxlength(15)
+  estado EstadoEnum
+}
+enum EstadoEnum {
+  ON,
+  OFF
+}
+enum TipoVehiculoEnum {
+  AUTOMOVIL,
+  TODOTERRENO,
+  FURGON,
+  CAMIONETA,
+  SUV,
+  SEDAN,
+  CITYCAR,
+  MOTOCICLETA,
+  SCOOTER,
+  OTRO
+}
+enum TipoVentaEnum {
+  SI,
+  OTRO
+}
+
+relationship OneToOne {
+  Compra{vehiculo} to Vehiculo{compra}
+  Venta{comprador} to Comprador{venta}
+  Venta{compra} to Compra{venta}
+}
+relationship OneToMany {
+  Vendedor{compra} to Compra{vendedor}
+  Comerciante{compra} to Compra{comerciante}
+  Marcas{modelos} to Modelos{marcas}
+  Marcas{vehiculo} to Vehiculo{marcas}
+  Modelos{vehiculo} to Vehiculo{modelos}
+}
+
+dto Comerciante, Compra, Comprador, Marcas, Modelos, Vehiculo, Vendedor, Venta with mapstruct
+paginate Comerciante, Compra, Comprador, Marcas, Modelos, Vehiculo, Vendedor, Venta with pagination
+service Comerciante, Compra, Comprador, Marcas, Modelos, Vehiculo, Vendedor, Venta with serviceImpl
+filter Comerciante, Compra, Comprador, Marcas, Modelos, Vehiculo, Vendedor, Venta

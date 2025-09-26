@@ -1,0 +1,360 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="genLetrasPdf()" [formGroup]="editForm">
+      <h2 id="jhi-letra-heading" data-cy="LetraCreateHeading">Generador de letras de pago</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <h6>Pagador</h6>
+        <div class="row">
+          <div class="form-group col-md">
+            <label class="form-control-label" for="field_nombrePagador">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              name="nombrePagador"
+              id="field_nombrePagador"
+              data-cy="nombrePagador"
+              formControlName="nombrePagador"
+            />
+            <div
+              *ngIf="
+                editForm.get('nombrePagador')!.invalid && (editForm.get('nombrePagador')!.dirty || editForm.get('nombrePagador')!.touched)
+              "
+            >
+              <small class="form-text text-danger" *ngIf="editForm.get('nombrePagador')?.errors?.required"> This field is required. </small>
+              <small class="form-text text-danger" *ngIf="editForm.get('nombrePagador')?.errors?.maxlength">
+                This field cannot be longer than 100 characters.
+              </small>
+            </div>
+          </div>
+          <!--ciudadGiro-->
+          <div class="form-group col-md-2">
+            <label class="form-control-label" for="field_ciudadGiro">Ciudad Giro</label>
+            <input
+              type="text"
+              class="form-control"
+              name="ciudadGiro"
+              id="field_ciudadGiro"
+              data-cy="ciudadGiro"
+              formControlName="ciudadGiro"
+            />
+            <div *ngIf="editForm.get('ciudadGiro')!.invalid && (editForm.get('ciudadGiro')!.dirty || editForm.get('ciudadGiro')!.touched)">
+              <small class="form-text text-danger" *ngIf="editForm.get('ciudadGiro')?.errors?.required"> This field is required. </small>
+              <small class="form-text text-danger" *ngIf="editForm.get('ciudadGiro')?.errors?.maxlength">
+                This field cannot be longer than 100 characters.
+              </small>
+            </div>
+          </div>
+          <!--	fechaGiro-->
+          <div class="form-group col-md-3">
+            <label class="form-control-label" for="field_fechaGiro">Fecha Giro</label>
+            <div class="input-group">
+              <input
+                id="field_fechaGiro"
+                data-cy="fechaGiro"
+                type="text"
+                class="form-control"
+                name="fechaGiro"
+                ngbDatepicker
+                #fechaGiroDp="ngbDatepicker"
+                formControlName="fechaGiro"
+              />
+              <span class="input-group-append">
+                <button type="button" class="btn btn-secondary" (click)="fechaGiroDp.toggle()">
+                  <fa-icon icon="calendar-alt"></fa-icon>
+                </button>
+              </span>
+            </div>
+            <div *ngIf="editForm.get('fechaGiro')!.invalid && (editForm.get('fechaGiro')!.dirty || editForm.get('fechaGiro')!.touched)">
+              <small class="form-text text-danger" *ngIf="editForm.get('fechaGiro')?.errors?.required"> This field is required. </small>
+            </div>
+          </div>
+        </div>
+
+        <h6>Beneficiario</h6>
+        <div class="row">
+          <div class="form-group col-md-9">
+            <!--				nombreBeneficiario-->
+            <label class="form-control-label" for="field_nombreBeneficiario">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              name="nombreBeneficiario"
+              id="field_nombreBeneficiario"
+              data-cy="nombreBeneficiario"
+              formControlName="nombreBeneficiario"
+            />
+            <div
+              *ngIf="
+                editForm.get('nombreBeneficiario')!.invalid &&
+                (editForm.get('nombreBeneficiario')!.dirty || editForm.get('nombreBeneficiario')!.touched)
+              "
+            >
+              <small class="form-text text-danger" *ngIf="editForm.get('nombreBeneficiario')?.errors?.required">
+                This field is required.
+              </small>
+              <small class="form-text text-danger" *ngIf="editForm.get('nombreBeneficiario')?.errors?.maxlength">
+                This field cannot be longer than 100 characters.
+              </small>
+            </div>
+          </div>
+          <!--rutBeneficiario-->
+          <div class="form-group col-md">
+            <label class="form-control-label" for="field_rutBeneficiario">Rut</label>
+            <input
+              type="text"
+              class="form-control"
+              name="rutBeneficiario"
+              id="field_rutBeneficiario"
+              data-cy="rutBeneficiario"
+              formControlName="rutBeneficiario"
+            />
+            <div
+              *ngIf="
+                editForm.get('rutBeneficiario')!.invalid &&
+                (editForm.get('rutBeneficiario')!.dirty || editForm.get('comunaBeneficiario')!.touched)
+              "
+            >
+              <small class="form-text text-danger" *ngIf="editForm.get('comunaBeneficiario')?.errors?.required">
+                This field is required.
+              </small>
+              <small class="form-text text-danger" *ngIf="editForm.get('comunaBeneficiario')?.errors?.maxlength">
+                This field cannot be longer than 100 characters.
+              </small>
+            </div>
+          </div>
+        </div>
+        <!--				domicilioBeneficiario-->
+        <div class="row">
+          <div class="form-group col-md-8">
+            <label class="form-control-label" for="field_domicilioBeneficiario">Domicilio</label>
+            <input
+              type="text"
+              class="form-control"
+              name="domicilioBeneficiario"
+              id="field_domicilioBeneficiario"
+              data-cy="domicilioBeneficiario"
+              formControlName="domicilioBeneficiario"
+            />
+            <div
+              *ngIf="
+                editForm.get('domicilioBeneficiario')!.invalid &&
+                (editForm.get('domicilioBeneficiario')!.dirty || editForm.get('domicilioBeneficiario')!.touched)
+              "
+            >
+              <small class="form-text text-danger" *ngIf="editForm.get('domicilioBeneficiario')?.errors?.required">
+                This field is required.
+              </small>
+              <small class="form-text text-danger" *ngIf="editForm.get('domicilioBeneficiario')?.errors?.maxlength">
+                This field cannot be longer than 100 characters.
+              </small>
+            </div>
+          </div>
+          <!--				ciudadBeneficiario-->
+          <div class="form-group col-md-2">
+            <label class="form-control-label" for="field_ciudadBeneficiario">Ciudad</label>
+            <input
+              type="text"
+              class="form-control"
+              name="ciudadBeneficiario"
+              id="field_ciudadBeneficiario"
+              data-cy="ciudadBeneficiario"
+              formControlName="ciudadBeneficiario"
+            />
+            <div
+              *ngIf="
+                editForm.get('ciudadBeneficiario')!.invalid &&
+                (editForm.get('ciudadBeneficiario')!.dirty || editForm.get('ciudadBeneficiario')!.touched)
+              "
+            >
+              <small class="form-text text-danger" *ngIf="editForm.get('ciudadBeneficiario')?.errors?.required">
+                This field is required.
+              </small>
+              <small class="form-text text-danger" *ngIf="editForm.get('ciudadBeneficiario')?.errors?.maxlength">
+                This field cannot be longer than 100 characters.
+              </small>
+            </div>
+          </div>
+
+          <!--				comunaBeneficiario-->
+          <div class="form-group col-md-2">
+            <label class="form-control-label" for="field_comunaBeneficiario">Comuna</label>
+            <input
+              type="text"
+              class="form-control"
+              name="comunaBeneficiario"
+              id="field_comunaBeneficiario"
+              data-cy="comunaBeneficiario"
+              formControlName="comunaBeneficiario"
+            />
+            <div
+              *ngIf="
+                editForm.get('comunaBeneficiario')!.invalid &&
+                (editForm.get('comunaBeneficiario')!.dirty || editForm.get('comunaBeneficiario')!.touched)
+              "
+            >
+              <small class="form-text text-danger" *ngIf="editForm.get('comunaBeneficiario')?.errors?.required">
+                This field is required.
+              </small>
+              <small class="form-text text-danger" *ngIf="editForm.get('comunaBeneficiario')?.errors?.maxlength">
+                This field cannot be longer than 100 characters.
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--			<div class="table-responsive" id="entities" *ngIf="variables && variables.length > 0">-->
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr>
+            <th scope="col"><span>Letra Cambio Nº</span></th>
+            <th scope="col"><span>Fecha Vencimiento</span></th>
+            <th scope="col"><span>Valor</span></th>
+            <th scope="col">
+              <button type="button" class="btn btn-primary" (click)="openModal()">
+                <fa-icon icon="plus"></fa-icon>&nbsp;<span>Añadir</span>
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let it of datos" data-cy="entityTable">
+            <td>{{ it.numeroLetra }}</td>
+            <td>{{ it.fechaVencimiento | date: 'dd-MM-yyyy' }}</td>
+            <td>$ {{ it.monto | currency: 'CLP':'symbol':'1.0-0' }}</td>
+            <td class="text-right">
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-sm" (click)="editRow(it)">
+                  <fa-icon icon="pencil-alt"></fa-icon>
+                  <span class="d-none d-md-inline">Edit</span>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm" (click)="deleteRow(it)">
+                  <fa-icon icon="times"></fa-icon>
+                  <span class="d-none d-md-inline">Delete</span>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--			</div>-->
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <!--					[disabled]="editForm.invalid || isSaving"-->
+        <button type="submit" id="save-entity" data-cy="entityCreateSaveButton" class="btn btn-primary">
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Generar Letras de Pago </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal para agregar fila -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Agregar nuevas fila</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="newRowForm">
+      <div class="form-group">
+        <label for="numCuotas">cantidad cuotas</label>
+        <input type="number" class="form-control" id="numCuotas" formControlName="numCuotas" placeholder="" />
+      </div>
+      <div class="form-group">
+        <label for="fechaVencimiento">Fecha Vencimiento a partir de</label>
+        <div class="input-group">
+          <input
+            id="fechaVencimiento"
+            class="form-control"
+            placeholder="dd-MM-yyyy"
+            formControlName="fechaVencimiento"
+            ngbDatepicker
+            fechaVencimientoDp="ngbDatepicker"
+            #d="ngbDatepicker"
+          />
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="monto">Valor</label>
+        <input type="number" class="form-control" id="monto" formControlName="monto" placeholder="$" />
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Guardar</button>
+  </div>
+</ng-template>
+
+<ng-template #contentEditRow let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Editar fila</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="editRowForm">
+      <div class="form-group">
+        <label for="numeroLetra">Letra Cambio Nº </label>
+        <input
+          type="number"
+          class="form-control"
+          id="numeroLetra"
+          readonly
+          formControlName="numeroLetra"
+          value="{{ editRowForm.get('numeroLetra')?.value }}"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="fechaVencimiento">Fecha Vencimiento</label>
+        <div class="input-group">
+          <input
+            id="fechaVencimiento"
+            class="form-control"
+            placeholder="dd-MM-yyyy"
+            formControlName="fechaVencimiento"
+            ngbDatepicker
+            fechaVencimientoDp="ngbDatepicker"
+            #d="ngbDatepicker"
+            value="{{ editRowForm.get('fechaVencimiento')?.value }}"
+          />
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="monto">Valor</label>
+        <input
+          type="number"
+          class="form-control"
+          id="monto"
+          formControlName="monto"
+          placeholder="$"
+          value="{{ editRowForm.get('monto')?.value }}"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Guardar</button>
+  </div>
+</ng-template>

@@ -1,0 +1,21 @@
+export enum TipoVehiculoEnum {
+  AUTOMOVIL = 'AUTOMOVIL',
+
+  TODOTERRENO = 'TODOTERRENO',
+
+  FURGON = 'FURGON',
+
+  CAMIONETA = 'CAMIONETA',
+
+  SUV = 'SUV',
+
+  SEDAN = 'SEDAN',
+
+  CITYCAR = 'CITYCAR',
+
+  MOTOCICLETA = 'MOTOCICLETA',
+
+  SCOOTER = 'SCOOTER',
+
+  OTRO = 'OTRO',
+}

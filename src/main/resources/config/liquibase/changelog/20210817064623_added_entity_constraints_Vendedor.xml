@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Vendedor.
+    -->
+    <changeSet id="20210817064623-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="direccion_id"
+                                 baseTableName="vendedor"
+                                 constraintName="fk_vendedor__direccion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="direccion"/>
+    </changeSet>
+</databaseChangeLog>

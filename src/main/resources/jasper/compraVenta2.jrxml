@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="declaracionJurada" pageWidth="612" pageHeight="936" columnWidth="556" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" uuid="cb4a6dd2-9bb2-4033-ac7c-727af4eff3cc">
+	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="mm"/>
+	<parameter name="nombreVendedor" class="java.lang.String"/>
+	<parameter name="estadoCivilVendedor" class="java.lang.String"/>
+	<parameter name="nacionalidadVendedor" class="java.lang.String"/>
+	<parameter name="direccionVendedor" class="java.lang.String"/>
+	<parameter name="comunaVendedor" class="java.lang.String"/>
+	<parameter name="rutVendedor" class="java.lang.String"/>
+	<parameter name="nombreComprador" class="java.lang.String"/>
+	<parameter name="comunaComprador" class="java.lang.String"/>
+	<parameter name="direccionComprador" class="java.lang.String"/>
+	<parameter name="rutComprador" class="java.lang.String"/>
+	<parameter name="tipoVenta" class="java.lang.String"/>
+	<parameter name="nombreRutVentaOtro" class="java.lang.String"/>
+	<parameter name="tipoVehiculo" class="java.lang.String"/>
+	<parameter name="marcaVehiculo" class="java.lang.String"/>
+	<parameter name="modeloVehiculo" class="java.lang.String"/>
+	<parameter name="numeroMotorVehiculo" class="java.lang.String"/>
+	<parameter name="numeroChasisVehiculo" class="java.lang.String"/>
+	<parameter name="anioVehiculo" class="java.lang.String"/>
+	<parameter name="colorVehiculo" class="java.lang.String"/>
+	<parameter name="patenteVehiculo" class="java.lang.String"/>
+	<parameter name="montoVentaTexto" class="java.lang.String"/>
+	<parameter name="montoVenta" class="java.lang.String"/>
+	<parameter name="obsFormaPago" class="java.lang.String"/>
+	<parameter name="ciudadVenta" class="java.lang.String"/>
+	<parameter name="diaVenta" class="java.lang.String"/>
+	<parameter name="mesVenta" class="java.lang.String"/>
+	<parameter name="anioVenta" class="java.lang.String"/>
+	<parameter name="impuesto" class="java.lang.String"/>
+	<parameter name="obs" class="java.lang.String"/>
+	<parameter name="conMandato" class="java.lang.Boolean"/>
+	<parameter name="fechaMandato" class="java.lang.String"/>
+	<parameter name="montoAvaluo" class="java.lang.String"/>
+	<parameter name="codSii" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band height="880" splitType="Stretch">
+			<rectangle radius="20">
+				<reportElement x="-2" y="0" width="560" height="880" uuid="16591d34-aa95-4c9e-8e2d-502448fa8548"/>
+				<graphicElement>
+					<pen lineWidth="3.0" lineStyle="Double"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</background>
+	<title>
+		<band height="106" splitType="Stretch">
+			<staticText>
+				<reportElement x="237" y="7" width="305" height="60" uuid="f34bfb52-8c37-47f5-94a6-8a3539ccad1d"/>
+				<textElement textAlignment="Center">
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPRA VENTA AL CONTADO DE VEHICULOS]]></text>
+			</staticText>
+			<image onErrorType="Blank">
+				<reportElement x="24" y="8" width="147" height="70" uuid="7b13c7f9-2073-4231-8bf6-6ce12a40fb0e"/>
+				<imageExpression><![CDATA["./jasper/logoLazcano.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="286" splitType="Immediate">
+			<textField textAdjust="StretchHeight">
+				<reportElement stretchType="RelativeToTallestObject" x="10" y="0" width="536" height="278" isPrintWhenDetailOverflows="true" uuid="c2e50974-3ed1-4ca3-85d8-f75127623067">
+					<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[$P{tipoVenta} =="SI"]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" markup="html">
+					<font size="12"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" firstLineIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Entre.:  " + $P{nombreVendedor} +" CI. "+$P{rutVendedor} +" domiciliado en "+ $P{direccionVendedor}+ " como Vendedor y Don "+ $P{nombreComprador}+ " CI "+$P{rutComprador}+" Domiciliado en "+$P{direccionComprador} + " como Comprador, se ha convenido en el siguiente CONTRATO COMPRAVENTA."+ " <br><br> <font size=\"2\">PRIMERO</font>,- Don "+ $P{nombreVendedor}+ " quien vende y transfiere a don "+ $P{nombreComprador}+ " quien compra y adquiere para "+$P{tipoVenta}+ ".<br><br>Un "+ $P{tipoVehiculo}+ " Marca: "+ $P{marcaVehiculo}+ ", Modelo: "+ $P{modeloVehiculo}+ ", Motor N°: "+ $P{numeroMotorVehiculo}+ ", Chasis/Serie: "+ $P{numeroChasisVehiculo}+ ", año: "+ $P{anioVehiculo}+ ", color: "+ $P{colorVehiculo}+ ", <br>P.P.U: "+ $P{patenteVehiculo}+ " del Registro Nacional de Vehículos Motorizados.<br><br>Usado en el estado que se encuentra, que es conocido del comprador, y sin derecho a ningún reclamo posterior. El comprador declara recibir en este acto a entera satisfacción la especie comprada."+ "<br><br> <font size=\"2\">SEGUNDO</font>.- El precio de venta es la suma de $ "+ $P{montoVenta}+", "+$P{montoVentaTexto}+ " que el comprador paga al vendedor en la siguiente forma: "+ $P{obsFormaPago}+". "+$P{obs}+ " y que el vendedor declara recibir a entera satisfacción."+ "<br><br> <font size=\"2\">TERCERO</font>.- Declara el Vendedor que EL VEHICULO en referencia le pertenece exclusivamente, que no tiene deuda ni gravamen de ninguna especie. Ni esta afecto a prenda o embargo y que ha sido causal determinante de esta operación la presente declaración."+ " <br><br> <font size=\"2\">CUARTO</font>.- Se faculta al portador para requerir las inscripciones y anotaciones que sean necesarias."+ "<br><br> <font size=\"2\">OTORGADO</font> en "+ $P{ciudadVenta}+ " el "+ $P{diaVenta}+ " de "+ $P{mesVenta}+ " de "+ $P{anioVenta}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement stretchType="RelativeToTallestObject" x="10" y="0" width="536" height="279" isPrintWhenDetailOverflows="true" uuid="14c6dd6f-00a1-49ac-986d-ceab993a9230">
+					<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="mm"/>
+					<printWhenExpression><![CDATA[$P{tipoVenta} =="OTRO"]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" markup="html">
+					<font size="12"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" firstLineIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Entre.:  " + $P{nombreVendedor} +" CI. "+$P{rutVendedor} +" domiciliado en "+ $P{direccionVendedor}+ " como Vendedor y Don "+ $P{nombreComprador}+ " CI "+$P{rutComprador}+" Domiciliado en "+$P{direccionComprador} + " como Comprador, se ha convenido en el siguiente CONTRATO COMPRAVENTA."+ " <br><br> <font size=\"2\">PRIMERO</font>,- Don "+ $P{nombreVendedor}+ " quien vende y transfiere a don "+ $P{nombreComprador}+ " quien compra y adquiere para "+$P{nombreRutVentaOtro} +".<br><br> Un "+ $P{tipoVehiculo}+ " Marca: "+ $P{marcaVehiculo}+ ", Modelo: "+ $P{modeloVehiculo}+ ", Motor N°: "+ $P{numeroMotorVehiculo}+ ", Chasis/Serie: "+ $P{numeroChasisVehiculo}+ ", año: "+ $P{anioVehiculo}+ ", color: "+ $P{colorVehiculo}+ ",<br>P.P.U: "+ $P{patenteVehiculo}+ " del Registro Nacional de Vehículos Motorizados.<br><br>Usado en el estado que se encuentra, que es conocido del comprador, y sin derecho a ningún reclamo posterior. El comprador declara recibir en este acto a entera satisfacción la especie comprada."+ "<br><br> <font size=\"2\">SEGUNDO</font>.- El precio de venta es la suma de $ "+ $P{montoVenta}+", "+$P{montoVentaTexto}+ " que el comprador paga al vendedor en la siguiente forma: "+ $P{obsFormaPago}+". "+$P{obs}+ " y que el vendedor declara recibir a entera satisfacción."+ "<br><br> <font size=\"2\">TERCERO</font>.- Declara el Vendedor que EL VEHICULO en referencia le pertenece exclusivamente, que no tiene deuda ni gravamen de ninguna especie. Ni esta afecto a prenda o embargo y que ha sido causal determinante de esta operación la presente declaración."+ " <br><br> <font size=\"2\">CUARTO</font>.- Se faculta al portador para requerir las inscripciones y anotaciones que sean necesarias."+ "<br><br> <font size=\"2\">OTORGADO</font> en "+ $P{ciudadVenta}+ " el "+ $P{diaVenta}+ " de "+ $P{mesVenta}+ " de "+ $P{anioVenta}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="61" splitType="Stretch">
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="15" y="0" width="531" height="50" uuid="ef091096-002e-44c6-9a0c-6e47bba9e99f">
+					<property name="com.jaspersoft.studio.unit.x" value="mm"/>
+					<printWhenExpression><![CDATA[$P{conMandato}]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreVendedor}+" C.I "+$P{rutVendedor} +" NAC.- REPRESENTADO POR DON CRISTIAN W. LAZCANO ESCOBAR.- C.I 10.373.691-9 NAC. FACULTAD DE REPRESENTACION QUE EMANA DE MANDATO ESPECIAL DE FECHA "+$P{fechaMandato}+" .- ANTE NOTARIO QUE SUSCRIBE."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="15" y="14" width="175" height="39" uuid="9fcdad87-de96-46ea-8e07-5f3f51958627"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[_________________________ Vendedor]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="15" y="53" width="175" height="17" uuid="a96e88c7-c2f9-4a9e-a6e5-f365400b1f28"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["C.I  "+$P{rutVendedor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="303" y="14" width="175" height="39" uuid="eacef74d-15c0-4ca0-a758-d36bc8a9a100"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[_________________________ Comprador]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="303" y="53" width="175" height="17" uuid="4c0cf5a8-7413-4b87-9b34-bf1635268e7a"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["C.I  "+$P{rutComprador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="193" y="69" width="150" height="18" uuid="a2e4c37a-c463-443d-ac2d-28e96a38a237"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[AUTORIZO LAS FIRMAS]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="101">
+			<textField textAdjust="StretchHeight">
+				<reportElement x="15" y="20" width="531" height="30" uuid="eb5bf8b6-d2bd-440a-badd-99be59837091"/>
+				<textElement textAlignment="Justified">
+					<font size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["EL PAGO DEL IMPUESTO DEL 1,5% MUNICIPAL  ES DE $"+ $P{impuesto}+" CANCELADOS HOY EN LA TESORERIA.CL."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="FixRelativeToBottom" x="23" y="63" width="490" height="20" uuid="f576b245-b015-4d36-be5f-15955598c914"/>
+				<textFieldExpression><![CDATA["SANTIAGO. "+$P{diaVenta}+" de "+$P{mesVenta}+" de "+$P{anioVenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="0" width="531" height="20" uuid="0a59fe85-c806-4968-b5ef-3a5e2b47f612"/>
+				<textFieldExpression><![CDATA["AVALÚO FISCAL $"+$P{montoAvaluo}+".- COD.SII: "+$P{codSii}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

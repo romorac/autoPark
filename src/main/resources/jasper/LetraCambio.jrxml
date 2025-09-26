@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LetraCambio" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="95ebd0ee-0553-49d8-a464-075fd8bed659">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="negritas" vTextAlign="Middle" markup="none" fontName="Tahoma" fontSize="9" isBold="true">
+		<paragraph firstLineIndent="4"/>
+	</style>
+	<style name="datos" vTextAlign="Middle" fontName="Arial" fontSize="8" isItalic="true">
+		<paragraph firstLineIndent="4"/>
+	</style>
+	<parameter name="numeroLetra" class="java.lang.String"/>
+	<queryString language="JSON">
+		<![CDATA[]]>
+	</queryString>
+	<field name="pagadorNombre" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="pagadorNombre"/>
+		<fieldDescription><![CDATA[pagadorNombre]]></fieldDescription>
+	</field>
+	<field name="pagadorCiudad" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="pagadorCiudad"/>
+		<fieldDescription><![CDATA[pagadorCiudad]]></fieldDescription>
+	</field>
+	<field name="beneficiarioNombre" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="beneficiarioNombre"/>
+		<fieldDescription><![CDATA[beneficiarioNombre]]></fieldDescription>
+	</field>
+	<field name="beneficiarioDomicilio" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="beneficiarioDomicilio"/>
+		<fieldDescription><![CDATA[beneficiarioDomicilio]]></fieldDescription>
+	</field>
+	<field name="beneficiarioCiudad" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="beneficiarioCiudad"/>
+		<fieldDescription><![CDATA[beneficiarioCiudad]]></fieldDescription>
+	</field>
+	<field name="beneficiarioComuna" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="beneficiarioComuna"/>
+		<fieldDescription><![CDATA[beneficiarioComuna]]></fieldDescription>
+	</field>
+	<field name="beneficiarioRut" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="beneficiarioRut"/>
+		<fieldDescription><![CDATA[beneficiarioRut]]></fieldDescription>
+	</field>
+	<field name="numeroLetra" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="numeroLetra"/>
+		<fieldDescription><![CDATA[numeroLetra]]></fieldDescription>
+	</field>
+	<field name="fechaVencimiento" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="fechaVencimiento"/>
+		<fieldDescription><![CDATA[fechaVencimiento]]></fieldDescription>
+	</field>
+	<field name="fechaGiro" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="fechaGiro"/>
+		<fieldDescription><![CDATA[fechaGiro]]></fieldDescription>
+	</field>
+	<field name="fechaPago" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="fechaPago"/>
+		<fieldDescription><![CDATA[fechaPago]]></fieldDescription>
+	</field>
+	<field name="montoNumerico" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="montoNumerico"/>
+		<fieldDescription><![CDATA[montoNumerico]]></fieldDescription>
+	</field>
+	<field name="montoTexto" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="montoTexto"/>
+		<fieldDescription><![CDATA[montoTexto]]></fieldDescription>
+	</field>
+	<field name="cantidadLetras" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="cantidadLetras"/>
+		<fieldDescription><![CDATA[cantidadLetras]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="248" splitType="Prevent">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.unit.y" value="px"/>
+			<property name="com.jaspersoft.studio.layout"/>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="0" y="0" width="530" height="193" uuid="fd1f09da-4b00-4e8e-94eb-abfbc99cfcea"/>
+				<graphicElement>
+					<pen lineWidth="3.0" lineStyle="Double"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle radius="5">
+				<reportElement x="382" y="40" width="136" height="18" forecolor="#1F2DCC" backcolor="rgba(225, 215, 213, 0.3137255)" uuid="34c05461-56ce-48ec-afac-3089977d5a10"/>
+			</rectangle>
+			<textField pattern="#,###.###">
+				<reportElement style="datos" x="382" y="40" width="136" height="18" uuid="a7eaa8ad-a106-44a6-ba70-eec2ae55ea25">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+				</reportElement>
+				<box topPadding="2"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph leftIndent="5" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$ "+$F{montoNumerico}+".-"]]></textFieldExpression>
+			</textField>
+			<rectangle radius="5">
+				<reportElement x="108" y="98" width="370" height="17" forecolor="#1F2DCC" backcolor="rgba(225, 215, 213, 0.3137255)" uuid="41603dc8-4d73-41ad-98fd-962fdb5ed731"/>
+			</rectangle>
+			<textField>
+				<reportElement x="108" y="98" width="370" height="18" uuid="5cb433d3-d295-44b5-943a-81d10a8f297f">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
+				</reportElement>
+				<box topPadding="2"/>
+				<textElement>
+					<font fontName="Tahoma" size="8" isBold="false" isUnderline="false"/>
+					<paragraph leftIndent="5" rightIndent="2" spacingBefore="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{montoTexto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="negritas" x="209" y="170" width="40" height="18" uuid="1610f887-c9dc-4424-a264-7d704afee7c3">
+					<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+				</reportElement>
+				<box topPadding="2"/>
+				<textElement markup="styled">
+					<font fontName="Tahoma" size="8" isBold="false"/>
+					<paragraph firstLineIndent="10"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold"><style isBold="true" pdfFontName="Helvetica-Bold">RUT</style></style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="98" width="40" height="18" uuid="e1932f6c-4c56-4596-9c57-00d20159956b">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
+					<property name="com.jaspersoft.studio.unit.firstLineIndent" value="pixel"/>
+				</reportElement>
+				<box topPadding="2"/>
+				<textElement markup="styled">
+					<font size="8" isBold="true"/>
+					<paragraph firstLineIndent="0" leftIndent="5" spacingBefore="0"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">Pesos.</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="negritas" x="38" y="152" width="70" height="18" uuid="27e77e83-38ae-4a81-b483-91d3f8acf539"/>
+				<textElement markup="styled">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">Ciudad</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="negritas" x="38" y="170" width="70" height="18" uuid="d29f2e30-582a-4351-8306-32a487642748"/>
+				<textElement markup="styled">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">Comuna</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="negritas" x="38" y="134" width="70" height="18" uuid="0d188df0-f864-4632-8715-d5348794f95f"/>
+				<textElement markup="styled">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">Domicilio</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="negritas" x="38" y="116" width="70" height="18" uuid="2b240258-1c02-4c19-9a92-3570ac1fa034"/>
+				<textElement markup="styled">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">A</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="negritas" x="38" y="98" width="70" height="18" uuid="bc63085f-a96f-4bdb-a4b3-10741ff37847"/>
+				<textElement markup="styled">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">la cantidad de</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="negritas" x="38" y="40" width="112" height="18" uuid="8709c1ce-532a-43f4-be61-f1fd114950d8"/>
+				<textElement markup="styled">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">Girada en</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="negritas" x="38" y="22" width="112" height="18" uuid="7362d3ad-1a77-4ad5-82ec-ed5485a3b93f"/>
+				<textElement markup="styled">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">Letra de Cambio Nº</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="datos" x="150" y="40" width="80" height="18" uuid="c11ab4bc-5c44-4ba0-a7e4-69203629a847"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pagadorCiudad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="datos" x="290" y="40" width="82" height="18" uuid="b6b59147-f67e-444a-a742-781d2f57cffc"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaGiro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="datos" x="38" y="76" width="440" height="18" uuid="520a67d9-9395-47ee-9b43-ec847b2fe525"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement markup="styled">
+					<font isItalic="false" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isItalic='true'>" + $F{pagadorNombre} + "</style>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="datos" x="108" y="116" width="274" height="18" uuid="3cce497a-2cb7-4bff-80b7-beaf2bf6edf1"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{beneficiarioNombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="datos" x="108" y="134" width="274" height="18" uuid="d6a932ca-8f5e-4dae-9658-e182422aaa4e"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{beneficiarioDomicilio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="datos" x="108" y="152" width="141" height="18" uuid="e66619f6-7854-4c1a-b7c5-8a613489e906"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement markup="styled">
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{beneficiarioCiudad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="datos" x="108" y="170" width="101" height="18" uuid="4b463e44-8d2f-4f70-aa3b-1c244168b23c"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement markup="styled">
+					<font isBold="false" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{beneficiarioComuna}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="datos" x="249" y="170" width="229" height="18" uuid="e8c18f70-6af3-4015-97f5-b072ade1770a"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement markup="styled">
+					<font isBold="false" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{beneficiarioRut}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="datos" x="290" y="22" width="82" height="18" uuid="43dc2275-1350-4f8e-9e16-944d302fc8aa"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaPago}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="negritas" x="38" y="58" width="328" height="18" uuid="f869c7e7-23dc-458a-b825-346f8c28a767"/>
+				<textElement markup="styled"/>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">se servirá Ud. mandar pagar por esta. Letra de Cambio a la orden de :</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="negritas" x="230" y="40" width="60" height="18" uuid="d89c8eb9-fae8-4dfa-b3cf-f59ec165271f"/>
+				<textElement markup="styled">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">Al</style>]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="datos" x="150" y="22" width="80" height="18" uuid="c1a6f481-cfc2-49eb-8a38-8b592a192f0d"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroLetra}+"/"+$F{cantidadLetras}]]></textFieldExpression>
+			</textField>
+			<image rotation="None" hAlign="Center" vAlign="Middle" isUsingCache="true" onErrorType="Blank">
+				<reportElement mode="Transparent" x="400" y="120" width="117" height="64" uuid="f8bf6be4-ddd3-40db-b2a7-68af7c816f03"/>
+				<imageExpression><![CDATA["./jasper/logo_AutoPark.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="180" y="2" width="160" height="20" uuid="0a478724-5a9b-4c8a-86e8-270b5e6736e8"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="Tahoma" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">Letra de Pago</style>]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="210" width="528" height="1" uuid="f70f3505-65ce-4afc-8b76-3144300df8a7"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="negritas" x="230" y="22" width="60" height="18" uuid="22b4877c-b5f1-4727-aa9f-6edf4b00ffea"/>
+				<textElement markup="styled"/>
+				<text><![CDATA[<style isBold="true" pdfFontName="Helvetica-Bold">vence: </style>]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

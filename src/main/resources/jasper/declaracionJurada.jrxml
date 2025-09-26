@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="declaracionJurada" pageWidth="609" pageHeight="935" columnWidth="569" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="26a3b5aa-d42e-4f41-8726-c48736561d0e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="mm"/>
+	<parameter name="nombreVendedor" class="java.lang.String"/>
+	<parameter name="estadoCivilVendedor" class="java.lang.String"/>
+	<parameter name="nacionalidadVendedor" class="java.lang.String"/>
+	<parameter name="profesionVendedor" class="java.lang.String"/>
+	<parameter name="domicilioVendedor" class="java.lang.String"/>
+	<parameter name="comunaVendedor" class="java.lang.String"/>
+	<parameter name="rutVendedor" class="java.lang.String"/>
+	<parameter name="nombreComerciante" class="java.lang.String"/>
+	<parameter name="rutComerciante" class="java.lang.String"/>
+	<parameter name="montoNumeroCompra" class="java.lang.String"/>
+	<parameter name="montoCompra" class="java.lang.String"/>
+	<parameter name="tipoVehiculo" class="java.lang.String"/>
+	<parameter name="marcaVehiculo" class="java.lang.String"/>
+	<parameter name="modeloVehiculo" class="java.lang.String"/>
+	<parameter name="anioVehiculo" class="java.lang.String"/>
+	<parameter name="patenteVehiculo" class="java.lang.String"/>
+	<parameter name="colorVehiculo" class="java.lang.String"/>
+	<parameter name="inscripcionVehiculo" class="java.lang.String"/>
+	<parameter name="diaVenta" class="java.lang.String"/>
+	<parameter name="mesVenta" class="java.lang.String"/>
+	<parameter name="anioVenta" class="java.lang.String"/>
+	<parameter name="telefonoVendedor" class="java.lang.String"/>
+	<parameter name="celularVendedor" class="java.lang.String"/>
+	<parameter name="formaPago" class="java.lang.String"/>
+	<parameter name="obsFormaPago" class="java.lang.String"/>
+	<parameter name="fijoDeclaracion" class="java.lang.String"/>
+	<parameter name="numeroMotor" class="java.lang.String"/>
+	<parameter name="chasis" class="java.lang.String"/>
+	<parameter name="recibiCancele" class="java.lang.String"/>
+	<parameter name="nombreComprador" class="java.lang.String"/>
+	<parameter name="rutComprador" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="122" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="12" width="170" height="71" uuid="9dd70db5-b583-4383-baff-12ce2fa443e0"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[ASESORIAS ADMINISTRATIVAS EN COMPRA Y VENTA DE VEHICULOS  LAZCANO PINTO
+AV. PANAMERICANA NORTE #5364
+HUECHURABA
+				]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="83" width="433" height="30" uuid="f48dbe8d-335b-41b3-b5df-9a5cc8edf971"/>
+				<textElement textAlignment="Center">
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DECLARACION JURADA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="191" splitType="Stretch">
+			<textField textAdjust="StretchHeight">
+				<reportElement stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="41" y="25" width="490" height="147" uuid="5af25c63-dda9-4703-8903-b58961d20ea8">
+					<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" markup="html">
+					<font size="11"/>
+					<paragraph lineSpacing="1_1_2" lineSpacingSize="1.0" firstLineIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Por la presente yo <b><b>"+ $P{nombreVendedor}+ "</b>\n</b>de estado civil <b>"+ $P{estadoCivilVendedor} + "</b> de nacionalidad  <b>"+ $P{nacionalidadVendedor}+ "</b> de Profesión <b>"+ $P{profesionVendedor} + "</b> domiciliado(a) en <b>"+ $P{domicilioVendedor}+ "</b> cédula nacional de identidad N° <b>"+ $P{rutVendedor}+ "</b> vengo a declarar bajo de fé de juramento que "+$P{recibiCancele} +" Sr. <b>"+ $P{nombreComerciante}+ "</b> cédula de identidad N° <b>"+ $P{rutComerciante}+ "</b> la suma de <b>$ "+$P{montoNumeroCompra}+".-</b>\n<b>"+ $P{montoCompra} + ".-</b><br>"+$P{formaPago}+". "+$P{obsFormaPago}+"<br>Correspondiente al precio de un <b>"+ $P{tipoVehiculo}+ "</b> Marca: <b>"+ $P{marcaVehiculo} + "</b>, Modelo: <b>"+ $P{modeloVehiculo}+ "</b>, Año: <b>"+ $P{anioVehiculo}+ "</b>, Motor: "+$P{numeroMotor}+", Chasis/Serie: "+$P{chasis}+",  Patente: <b>"+ $P{patenteVehiculo}+ "</b>, Color: <b>"+ $P{colorVehiculo}+ "</b>, Inscripción: <b>"+ $P{inscripcionVehiculo}+ "</b> a nombre de <b>"+ $P{nombreComprador}+"</b>.-<br>"+$P{fijoDeclaracion}+".-"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="215">
+			<textField>
+				<reportElement positionType="Float" x="313" y="70" width="209" height="50" uuid="b1a54d83-51c0-4261-842d-46b12c0f4cb8"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Declarante \nFono1: "+$P{telefonoVendedor}+"\nFono2:"+$P{celularVendedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="40" y="70" width="200" height="30" uuid="c1f49e00-3e81-4cee-9c0d-ee9a101299d9"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreComerciante}+".-"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="41" y="50" width="200" height="18" uuid="3bd41c89-ed4f-49dc-aa9c-028bd98a1355"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[_________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="313" y="50" width="209" height="18" uuid="77436d5c-93c1-4edd-b5f9-a0e8b958cef8"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[_________________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="119" y="174" width="320" height="20" uuid="4767c6af-6d39-4930-b7c9-1118c07bbf2c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA["_______________________________________________"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="119" y="195" width="320" height="20" uuid="171cc4f2-7faf-44e8-9fb5-96884fa069bc"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[FIRMA TOMADA POR : CRISTIAN LAZCANO E.]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="28">
+			<textField>
+				<reportElement x="0" y="2" width="500" height="20" uuid="55ec8db2-c6be-4450-b0df-6b50e1ccac16"/>
+				<textFieldExpression><![CDATA["SANTIAGO. "+$P{diaVenta}+" de "+$P{mesVenta}+" de "+$P{anioVenta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

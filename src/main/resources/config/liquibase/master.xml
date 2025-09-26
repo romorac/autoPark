@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="now()" dbms="mysql, mariadb"/>
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
+    <property name="clobType" value="clob" dbms="h2"/>
+    <property name="clobType" value="clob" dbms="mysql, oracle, mssql, mariadb, postgresql"/>
+    <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
+    <property name="datetimeType" value="datetime(6)" dbms="mysql, mariadb"/>
+    <property name="datetimeType" value="datetime" dbms="oracle, mssql, postgresql, h2"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210821003856_added_entity_Comerciante.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210821003857_added_entity_Comprador.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210821003858_added_entity_Vehiculo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210821003859_added_entity_Vendedor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210821003900_added_entity_Compra.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210821003901_added_entity_Venta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210821003902_added_entity_Marcas.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210821003903_added_entity_Modelos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210821003904_added_entity_Variables.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20210821003858_added_entity_constraints_Vehiculo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210821003900_added_entity_constraints_Compra.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210821003901_added_entity_constraints_Venta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210821003903_added_entity_constraints_Modelos.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
+</databaseChangeLog>
