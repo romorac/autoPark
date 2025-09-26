@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import cl.lazcano.transfer.service.PagoLetrasService;
+import cl.lazcano.transfer.service.dto.PagoLetrasDTO;
+import cl.lazcano.transfer.service.vo.ResponseVO;
 
 @RestController
 @RequestMapping("/api")

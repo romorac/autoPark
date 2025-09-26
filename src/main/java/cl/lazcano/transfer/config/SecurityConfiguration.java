@@ -57,7 +57,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/i18n/**")
             .antMatchers("/content/**")
             .antMatchers("/swagger-ui/**")
-            .antMatchers("/test/**");
+            .antMatchers("/test/**")
+            .antMatchers("/letras/generaPdf**")
+            .antMatchers("/letras/generaPdf");
     }
 
     @Override
@@ -68,7 +70,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.referrerPolicy(ReferrerPolicyHeaderWriter.ReferrerPolicy.STRICT_ORIGIN_WHEN_CROSS_ORIGIN).and()
 				.featurePolicy(
 						"geolocation 'none'; midi 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; fullscreen 'self'; payment 'none'")
-				.and().frameOptions().deny().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
+				.and().frameOptions().deny().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+                .authorizeRequests()
+                 .antMatchers("/api/letras/generaPdf").permitAll()
 				.antMatchers("/api/authenticate").permitAll().antMatchers("/api/register").permitAll().antMatchers("/api/activate").permitAll()
 				.antMatchers("/api/account/reset-password/init").permitAll().antMatchers("/api/account/reset-password/finish").permitAll().antMatchers("/api/admin/**")
 				.hasAuthority(AuthoritiesConstants.ADMIN).antMatchers("/api/**").authenticated().antMatchers("/management/health").permitAll().antMatchers("/management/health/**")
