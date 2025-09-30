@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import tech.jhipster.config.JHipsterConstants;
 
-@Configuration
-@EnableJpaRepositories("cl.lazcano.transfer.repository")
-@EnableJpaAuditing(auditorAwareRef = "springSecurityAuditorAware")
-@EnableTransactionManagement
+// @Configuration
+// @EnableJpaRepositories("cl.lazcano.transfer.repository")
+// @EnableJpaAuditing(auditorAwareRef = "springSecurityAuditorAware")
+// @EnableTransactionManagement
 public class DatabaseConfiguration {}
